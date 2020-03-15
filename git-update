@@ -1,14 +1,24 @@
-for i in $@
-do
-    if [ -d $i ]
+if [ $# == 0 ]
+then  
+    if [ -e .git ] 
     then
-        cd $i
-        if [ -e .git ]
-        then
-            git add .
-            git commit -m "Update git folder"
-            git push
-        fi
-        cd ..
+        git add .
+        git commit -m "Update git folder"
+        git push
     fi
-done
+else
+    for i in $@ 
+    do
+        if [ -d $i ] 
+        then
+            cd $i
+            if [ -e .git ] 
+            then
+                git add .
+                git commit -m "Update git folder"
+                git push
+            fi
+            cd ..
+        fi
+    done
+fi
