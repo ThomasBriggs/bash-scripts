@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MESSAGE="Updated: $(date)"
+MESSAGE="Updated: $(date +'%m/%d/%Y')"
 
 border() {
     title="| $1 |"
