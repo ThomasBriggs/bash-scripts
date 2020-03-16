@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MESSAGE="Updated: $(date +'%m/%d/%Y')"
+MESSAGE="Updated via git-updategit"
 
 border() {
     title="| $1 |"
