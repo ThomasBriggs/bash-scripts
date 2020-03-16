@@ -12,7 +12,7 @@ border()
 }
 
 function update {
-    border $i
+    border $(pwd)
     git add .
     git commit -m "$MESSAGE"
     git push
