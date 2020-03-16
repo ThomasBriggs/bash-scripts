@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MESSAGE="Updated via git-update"
+MESSAGE="git-update: $(date)"
 
 border() {
     title="| $@ |"
