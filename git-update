@@ -16,7 +16,7 @@ function update {
     git add .
     git commit -m "$MESSAGE"
     git push
-    printf %"$(tput cols)"s |tr " " "-"
+    echo
 }
 
 if [ $# == 0 ]
