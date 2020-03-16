@@ -11,17 +11,17 @@ border() {
 }
 
 update () {
+    border ${PWD##*/}
+    printf %"$(tput cols)"s |tr " " "-"
     if [ -e .git ]
     then
-        border ${PWD##*/}
-        printf %"$(tput cols)"s |tr " " "-"
         git add .
         git commit -m " $@ "
         git push
-        printf %"$(tput cols)"s |tr " " "-"
     else
         echo "No .git file exists"
     fi
+    printf %"$(tput cols)"s |tr " " "-"
 }
 
 if [ $# == 0 ]
