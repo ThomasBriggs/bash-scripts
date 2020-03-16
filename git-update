@@ -13,10 +13,11 @@ border()
 
 function update {
     border ${PWD##*/}
+    printf %"$(tput cols)"s |tr " " "-"
     git add .
     git commit -m "$MESSAGE"
     git push
-    echo
+    printf %"$(tput cols)"s |tr " " "-"
 }
 
 if [ $# == 0 ]
