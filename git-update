@@ -1,12 +1,29 @@
 #!/bin/bash
 
+MESSAGE="Update git folder"
+
+border()
+{
+    title="| $1 |"
+    edge=$(echo "$title" | sed 's/./-/g')
+    echo "$edge"
+    echo "$title"
+    echo "$edge"
+}
+
+function update {
+    border $i
+    git add .
+    git commit -m "$MESSAGE"
+    git push
+    printf %"$(tput cols)"s |tr " " "-"
+}
+
 if [ $# == 0 ]
 then  
     if [ -e .git ] 
     then
-        git add .
-        git commit -m "Update git folder"
-        git push
+        update
     fi
 else
     for i in $@ 
@@ -16,9 +33,7 @@ else
             cd $i
             if [ -e .git ] 
             then
-                git add .
-                git commit -m "Update git folder"
-                git push
+                update
             fi
             cd ..
         fi
