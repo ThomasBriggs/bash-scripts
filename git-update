@@ -3,8 +3,8 @@
 MESSAGE="git-update"
 
 border() {
-    title="| $@ |"
-    edge=$(echo "$title" | sed 's/./-/g')
+    title="# $@ #"
+    edge=$(echo "$title" | sed 's/./#/g')
     echo "$edge"
     echo "$title"
     echo "$edge"
