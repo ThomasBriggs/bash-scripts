@@ -1,9 +1,9 @@
 #!/bin/bash
 
-MESSAGE="Updated via git-updategit"
+MESSAGE="Updated via git-update"
 
 border() {
-    title="| $1 |"
+    title="| $@ |"
     edge=$(echo "$title" | sed 's/./-/g')
     echo "$edge"
     echo "$title"
@@ -14,7 +14,7 @@ update () {
     border ${PWD##*/}
     printf %"$(tput cols)"s |tr " " "-"
     git add .
-    git commit -m $1
+    git commit -m " $@ "
     git push
     printf %"$(tput cols)"s |tr " " "-"
 }
@@ -23,7 +23,7 @@ if [ $# == 0 ]
 then  
     if [ -e .git ] 
     then
-        update $MESSAGE
+        update "$MESSAGE"
     fi
 else
     for i in $@ 
@@ -33,7 +33,7 @@ else
             cd $i
             if [ -e .git ] 
             then
-                update $MESSAGE
+                update "$MESSAGE"
             fi
             cd ..
         fi
