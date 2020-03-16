@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MESSAGE="Update git folder"
+MESSAGE="Updated: $(date)"
 
 border() {
     title="| $1 |"
