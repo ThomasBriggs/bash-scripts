@@ -1,0 +1,4 @@
+#!/bin/bash
+ALPHA=ABCDEFGHIJKLMNOPQRSTUVWXYZ
+echo $ALPHA
+copyq copy $ALPHA >> /dev/null 
